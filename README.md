@@ -2,7 +2,7 @@
 
 ## A contribution to [NaNoGenMo 2018](https://github.com/NaNoGenMo/2018)
 
-The code for this project attempts to generate a text in French with rhymed couplets of [Alexandrines](https://en.wikipedia.org/wiki/Alexandrine) using the [Thêatre Classique](http://www.theatre-classique.fr)'s online collection of French plays from the sixteenth to the nineteenth centuries.
+The code for this project attempts to generate a text in French with rhymed couplets of [Alexandrines](https://en.wikipedia.org/wiki/Alexandrine) using the [Théâtre Classique](http://www.theatre-classique.fr)'s online collection of French plays from the sixteenth to the nineteenth centuries.
 
 The goal is to transform a canonical text systematically by an analogy based on a major theme in the text. By rewriting the text with other texts from the same period, it may be possible to reinvent rhetorically the text from an orthogonal perspective. Or something like that.
 
