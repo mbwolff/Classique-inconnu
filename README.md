@@ -10,7 +10,7 @@ Here's the procedure:
 
 1. Scrape the links for all the XML files of the plays from [this page](http://www.theatre-classique.fr/pages/programmes/PageEdition.php) and then download them to build a corpus.
 2. Make a vector space for all words in the corpus using [Gensim's Word2Vec module](https://radimrehurek.com/gensim/models/word2vec.html). The words are lemmatized using [SpaCy](https://spacy.io) to simplify the vector space.
-3. Build a [tf-idf matrix](https://scikit-learn.org/stable/modules/feature_extraction.html#tfidf-term-weighting) matrix for all the verses in all the plays in the corpus.
+3. Build a [tf-idf matrix](https://scikit-learn.org/stable/modules/feature_extraction.html#tfidf-term-weighting) for all the verses in all the plays in the corpus.
 4. Choose a play in the corpus (such as Racine's [_Phèdre_](http://www.theatre-classique.fr/pages/programmes/edition.php?t=../documents/RACINE_PHEDRE.xml)) and a pair of words to form the basis of an analogy (_femme_ and _homme_, for instance). The pair will enable a modification of the play by replacing words according to the analogy (_roi_ is to _homme_ as **_reine_** is to _femme_).
 5. Take the first verse in the original play and modify the verse with word substitutions based on the vector space.
 6. Construct a tf-idf vector for the modified verse based on the matrix for the whole corpus.
