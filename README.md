@@ -16,3 +16,16 @@ Here's the procedure:
 6. Construct a tf-idf vector for the modified verse based on the matrix for the whole corpus.
 7. Find a verse in the corpus that is most similar to the modified verse using cosine similarity. The verse must follow the pattern _aa bb cc dd ..._ where the rhymes alternate between feminine (the last word of the verse ending in a silent _e_) and masculine (the last word ending in some other letter). The [epitran module](https://github.com/dmort27/epitran) is useful for transliterating text into IPA, although it is imperfect (as its authors acknowledge) because the relationship between word spellings and phonetics in French is complicated.
 8. Return to step 5, taking the next verse in the original play, and continue until every verse in the original play has been modified, vectorized, and replaced with another verse from the corpus.
+
+Here are the first lines of the generated text:
+
+> J'en aurais paru digne autant ou plus qu'un autre :  (CORNEILLEP_PULCHERIE.xml:994)
+> Doncques vous vous plaignez d'une ingrate maîtresse ?   (DESMARETS_VISIONNAIRES.xml:1368)
+> Mais un coup d'oeil peut subjuguer un sage.  (VOLTAIRE_DROITDUSEIGNEUR.xml:934)
+> Qui retient mon courage  (URFE_SYLVANIRE.xml:4031)
+> Mes feux, qu'ont redoublés ces propos adorables,  (CORNEILLEP_SUIVANTE.xml:913)
+> Je t'ai fait un secret dont la charge m'accable ;  (NIVELLE_PREJUGEALAMODE.xml:414)
+> On parle bien de vous, le Prince vous regarde   (AURE_GENEVIEVE70.xml:1357)
+> Paix, voici mon vieillard.   (AURE_DIPNE.xml:315)
+
+At the end of each verse is a reference to its source text and line number.

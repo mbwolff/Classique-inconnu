@@ -167,7 +167,7 @@ while len(source_text) > 0:
             print(thisVerse.encode('latin-1') + '  (' + vers[0] + ':' + str(vers[1]) + ')')
             rime[3] = thisVerse
         else:
-            print('Can\'t find a replacement verse! All done.')
+            print('[Can\'t find a replacement verse!]')
             break
 
         rime[1] = not rime[1] # alternate between 1st and 2nd verse of couplet

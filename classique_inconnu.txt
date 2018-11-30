@@ -129,7 +129,7 @@ Et ce grand homme alors, cédant avec constance...  (SAURIN_SPARTACUS.xml:1216)
 Quoi qu'on m'ait fait d'outrage, il ne m'en souvient plus :  (CORNEILLEP_SERTORIUS.xml:1015)
 Chante, tes pleurs font superflus ;  (POISSON_SOTVENGE.xml:512)
 Cette lettre, Monsieur, qu'avec cette boëte,  (MOLIERE_ECOLEDESMARIS.xml:520)
-Can't find a replacement verse! All done.
+[Can't find a replacement verse!]
 Qui rencontrerait mal sur un si beau sujet ?  (ROTROU_CAPTIFS.xml:1135)
 Moi, la grimace ! À qu'eux surget ?  (TACONET_ECOSSEUSES.xml:124)
 Ainsi ces fils ainés des rives avernales,   (MATHIEU_MAGICIENNEETRANGERE.xml:110)
@@ -219,7 +219,7 @@ Et jeté sous vos pieds la puissance ennemie,  (CORNEILLEP_DONSANCHE.xml:86)
 Dont mon coeur se sent agité.  (QUINAULT_ARMIDE.xml:655)
 Que vous avez chez vous celle dont il s'agit,  (MOLIERE_ECOLEDESFEMMES.xml:1735)
 Aussi dure qu'Orgon, ta trépasserais là,  (VILLIERS_CRITIQUEDUTARTUFFE.xml:441)
-Can't find a replacement verse! All done.
+[Can't find a replacement verse!]
 J'en voulais par ta mort délivrer l'Univers  (BOYER_PORUS.xml:981)
 Je n'en puis plus douter, et ce nom seul m'éclaire ;   (BOISSY_HOMMEDUJOUR.xml:481)
 Que vertu ni noblesse.  Et moi je n'en crois rien.   (SCARRON_HERITIERRIDICULE.xml:1096)
@@ -361,7 +361,7 @@ Si le Duc de Norfolk, que peut-être on opprime,   (BOURSAULT_MARIESTUARD.xml:51
 Non, je n'étais point fait pour tant de cruauté.   (REGNARD_SAPOR.xml:1156)
 Tantôt par des gluaux,  (URFE_SYLVANIRE.xml:1406)
 C'est peu que mon chagrin me fasse voir sans cesse,    (CORNEILLET_MORTDACHILLE.xml:1073)
-Can't find a replacement verse! All done.
+[Can't find a replacement verse!]
 Il en est, cher Alceste, ainsi que des amis,  (FABREDEGLANTINE_PHILINTEDEMOLIERE.xml:153)
 Aiment mieux voir Polydore à mort mis,   (JODELLE_EUGENE.xml:8)
 Fût péri le premier, et tous l'auraient suivi.  (CORNEILLEP_MEDEE.xml:436)
@@ -499,7 +499,7 @@ Et c'est à son sujet que ma flamme s'augmente,   (MARESCHALA_GENEREUSEALLEMANDE
 Préparons-nous pour la Fête nouvelle ;   (QUINAULT_TEMPLEDELAPAIX.xml:21)
 Ni qu'au vouloir d'un père on me trouva rebelle.   (DURYER_CLEOMEDON.xml:1770)
 En effet, contre Hylas c'est trop de cruauté ;   (MARESCHALA_INCONSTANCEDHYLAS.xml:1542)
-Can't find a replacement verse! All done.
+[Can't find a replacement verse!]
 Ce Seigneur alléguait, pour finir la dispute,  (GUERINDEBOUSCAL_DOMQUIXOTE2.xml:928)
 Cousent à renouer le noeud qu'il a rompu,  (GUDIN_LOTHAIRE.xml:1050)
 Reconnaissez enfin ce Héros glorieux.   (NADAL_SAUL.xml:314)
@@ -873,7 +873,7 @@ Tous leurs concerts valent-ils nos musettes ?  (ROUSSEAU_DEVINDUVILLAGE.xml:303)
 Comment en pourrez-vous surmonter les douleurs,  (CORNEILLEP_POLYEUCTE.xml:83)
 Vous laissez entraîner aux mondaines erreurs ?  (CARBONDEFLINS_MARIDIRECTEUR.xml:63)
 Lui donnant des Fêtes sans cesse,   (CORNEILLET_INCONNU.xml:33)
-Can't find a replacement verse! All done.
+[Can't find a replacement verse!]
 Contre cet attentat insigne et manifeste.  (FABREDEGLANTINE_PHILINTEDEMOLIERE.xml:1044)
 Son courage dément ce message funeste,  (DURYER_LUCRECE.xml:848)
 Ici votre salut pend encore en balance ;   (MARESCHALA_GENEREUSEALLEMANDE2.xml:1913)
@@ -957,7 +957,7 @@ Je dois songer au départ qu'il faut faire,  (URFE_SYLVANIRE.xml:2706)
 Pourrions-nous fuir le secours qui t'arrive ?  (CORNEILLEP_TOISON.xml:139)
 La chaleur du combat ne peut être plus vive.  (CREBILLON_CATILINA.xml:1626)
 Bon ! c'est du vieil honneur dont vous nous parlez là.  (QUINAULT_MERECOQUETTE.xml:356)
-Can't find a replacement verse! All done.
+[Can't find a replacement verse!]
 Je veux de ma rivale assurer le trépas.  (GUDIN_LOTHAIRE.xml:338)
 En vis les fondements qu'il ne condamna pas.  (LACALPRENEDE_PHALANTE.xml:1106)
 Je fuis ce qui m'expose à montrer ma faiblesse.   (CORNEILLET_DARIUS.xml:458)
@@ -1507,7 +1507,7 @@ Qu'ai-je appris ? Se peut-il qu'Hortense  (POINSINET_FRAMACONNES.xml:137)
 Je vois que ton devoir s'accorde avec ton zèle.   (NADAL_OSARPHISMOISE.xml:70)
 Louis me l'a promis ; et votre ami fidèle,  (LAHARPE_COMTEDEWARWICK.xml:347)
 Et pourriez-vous penser que mon coeur eût aimé,  (MOLIERE_DOMGARCIEDENAVARRE.xml:642)
-Can't find a replacement verse! All done.
+[Can't find a replacement verse!]
 Et couvert de bijoux comme un Roi de la Chine.  (SCARRON_JODELET.xml:621)
 Qui vient de vous coûter deux cents mille florins.  (PATRAT_VENGEANCE.xml:679)
 Mais où sont les romains, leurs lois, même leurs dieux ?  (CREBILLON_CATILINA.xml:820)
@@ -1603,7 +1603,7 @@ Ayant de notre Hymen la pompe retardée,   (LACALPRENEDE_CLARIONTE.xml:274)
 Je vois Phrosine..... Aurait-elle entendu ?   (ANDRIEUX_ANAXIMANDRE.xml:248)
 Si mes maux se bornaient à mon procès perdu :   (BOISSY_CRITIQUEAUTEURSUPERSTICIEUX.xml:196)
 Dont j'espérais en vain fléchir la cruauté.  (VOLTAIRE_ORPHELINDELACHINE.xml:1323)
-Can't find a replacement verse! All done.
+[Can't find a replacement verse!]
 Je broyai les couleurs qu'employa son pinceau.  (LAHARPE_MUSESRIVALES.xml:203)
 J'ai toujours avec eux vogué sur leurs vaisseaux,  (DURYER_DYNAMIS.xml:1160)
 Imprudemment ? Ce billet est fort sage.   (DANCOURT_ENFANTSDEPARIS.xml:1650)
