@@ -19,13 +19,15 @@ Here's the procedure:
 
 Here are the first lines of the generated text:
 
-> J'en aurais paru digne autant ou plus qu'un autre :  (CORNEILLEP_PULCHERIE.xml:994)
-> Doncques vous vous plaignez d'une ingrate maîtresse ?   (DESMARETS_VISIONNAIRES.xml:1368)
-> Mais un coup d'oeil peut subjuguer un sage.  (VOLTAIRE_DROITDUSEIGNEUR.xml:934)
-> Qui retient mon courage  (URFE_SYLVANIRE.xml:4031)
-> Mes feux, qu'ont redoublés ces propos adorables,  (CORNEILLEP_SUIVANTE.xml:913)
-> Je t'ai fait un secret dont la charge m'accable ;  (NIVELLE_PREJUGEALAMODE.xml:414)
-> On parle bien de vous, le Prince vous regarde   (AURE_GENEVIEVE70.xml:1357)
-> Paix, voici mon vieillard.   (AURE_DIPNE.xml:315)
+```
+J'en aurais paru digne autant ou plus qu'un autre :  (CORNEILLEP_PULCHERIE.xml:994)
+Doncques vous vous plaignez d'une ingrate maîtresse ?   (DESMARETS_VISIONNAIRES.xml:1368)
+Mais un coup d'oeil peut subjuguer un sage.  (VOLTAIRE_DROITDUSEIGNEUR.xml:934)
+Qui retient mon courage  (URFE_SYLVANIRE.xml:4031)
+Mes feux, qu'ont redoublés ces propos adorables,  (CORNEILLEP_SUIVANTE.xml:913)
+Je t'ai fait un secret dont la charge m'accable ;  (NIVELLE_PREJUGEALAMODE.xml:414)
+On parle bien de vous, le Prince vous regarde   (AURE_GENEVIEVE70.xml:1357)
+Paix, voici mon vieillard.   (AURE_DIPNE.xml:315)
+```
 
 At the end of each verse is a reference to its source text and line number.
