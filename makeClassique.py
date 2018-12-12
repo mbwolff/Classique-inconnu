@@ -28,8 +28,9 @@ from sklearn.metrics.pairwise import cosine_similarity
 sourcedir = 'Fievre'
 model_file = 'Fievre_model'
 pkl_dict = 'pos_dict.pkl'
-number_of_options = 50
-original = 'RACINE_PHEDRE.xml'
+number_of_options = 25
+no_phonemes = 3 # actually 2, the last phoneme is a space
+number_of_words = 50000
 positive = u'femme'
 negative = u'homme'
 
@@ -77,13 +78,14 @@ def transform_verse(assertion):
     return response
 
 def add2corpus(corpus, string, fname, ln):
-    ipa = epi.transliterate(unicode(re.sub('\W+$', '', string)))
+    ipa = epi.transliterate(unicode(re.sub('[\W\s]+$', ' ', string)))
     l = [fname, ln, string, ipa]
     corpus.append(l)
 
 def readFile(fname, corpus):
     with open(os.path.join(sourcedir, fname), 'rb') as myfile:
-        string = myfile.read().decode('iso-8859-1').encode('utf8')
+#        string = myfile.read().decode('iso-8859-1').encode('utf8')
+        string = myfile.read()
     root = ET.fromstring(string)
 
     node = root.find('.//SourceDesc/type')
@@ -102,6 +104,25 @@ def readFile(fname, corpus):
                 string = [verse]
                 ln = id
         add2corpus(corpus, unicode(' '.join(string)), fname, ln)
+def check_rhyme(s1,s2):
+#    for l in lines:
+#        l = re.sub('[\W\s]+$', '', l)
+#        l = re.sub('\-', ' ', l)
+#        words = l.lower().split()
+#        for w in words:
+#            w = re.sub('\W', '', w)
+#
+    if s1[-no_phonemes:] == s2[-no_phonemes:]:
+        return True
+    else:
+        return False
+
+def check_gender(isF,ll):
+    if (isF == True and ll == u'e') or (isF == False and ll != u'e'):
+        return True
+    else:
+        return False
+
 def eprint(*args, **kwargs):
     print(*args, file=sys.stderr, **kwargs)
 ##### END functions and classes
@@ -114,8 +135,8 @@ for fname in os.listdir(sourcedir):
 
 print('Un Classique inconnu\n')
 print('A contribution to NaNoGenMo 2018 by Mark Wolff <wolff.mark.b@gmail.com>\n\n')
-print('Positive term for word vector space analogy: ' + positive.encode('latin-1'))
-print('Negative term for word vector space analogy: ' + negative.encode('latin-1'))
+print('Positive term for word vector space analogy: ' + positive.encode('utf8'))
+print('Negative term for word vector space analogy: ' + negative.encode('utf8'))
 print('Number of verses in corpus: ' + str(len(corpus)))
 
 vectorizer = TfidfVectorizer(
@@ -127,57 +148,63 @@ print('Initial verse index: ' + str(index) + '\n')
 
 vectorized_corpus = vectorizer.fit_transform([vers[2] for vers in corpus])
 
-rime = [] # Feminine=True, FirstVerse=True, transliteration, verse
+v_state = [] # Feminine=True, FirstVerse=True, transliteration, verse
 total_words = 0
 line = 0
-while total_words < 50000:
-    line = line + 1
-    if line % 100 == 0:
-        eprint('Selected ' + str(line) + ' verses.')
+while total_words < number_of_words:
+    vers = []
     sv = corpus.pop(index)
-    total_words = total_words + len(sv[2].split())
-    print(str(line) + ' ' + sv[2].encode('latin-1') + '  (' + sv[0] + ':' + str(sv[1]) + ')')
+    delete_row_csr(vectorized_corpus, index)
     tv = transform_verse(sv[2])
     vectorized_tv = vectorizer.transform([tv])
     vector_similarity = cosine_similarity(vectorized_tv, vectorized_corpus)
-    thisVerse = u''
-    if not rime:
+    got_verse = False
+    if not v_state: # first verse
         index = numpy.argmax(vector_similarity)
-        vers = corpus.pop(index)
-        delete_row_csr(vectorized_corpus, index)
-        thisVerse = vers[2]
-        if vers[2][-1:] == u'e':
-            rime = [True, True, vers[3], thisVerse]
+        vers = corpus[index]
+        got_verse = True
+        if re.sub('[\W\s]+$', '', vers[2])[-1:] == u'e':
+            v_state = [True, True, vers[3], vers[2]]
         else:
-            rime = [False, True, vers[3], thisVerse]
+            v_state = [False, True, vers[3], vers[2]]
     else:
-        topN = vector_similarity.argsort()[-1*number_of_options:][::-1]
-        while len(topN) > 0:
+        topN = vector_similarity.argsort()[-number_of_options:][::-1]
+        v_state_words = re.sub('[\W\s]+$', '', v_state[3]).lower().split()
+        while len(topN) > 0 and got_verse == False:
             index = numpy.argmax(topN)
             topN = numpy.delete(topN, [0])
             vers = corpus[index]
-            vers_words = vers[3].split()
-            rime_words = rime[2].split()
-            if vers_words and (vers_words[-1] != rime_words[-1]): # consecutive verses cannot have the same last word
-                if rime[1] == False: # we need to complete the couplet
-                    if (rime[0] == True and vers[2][-1:] == u'e' and vers[3][-2:] == rime[2][-2:]) or (vers[2][-1:] != u'e' and vers[3][-2:] == rime[2][-2:]):
-                        thisVerse = vers[2]
-                        delete_row_csr(vectorized_corpus, index)
-                        break
+            ts = re.sub('[\W\s]+$', '', vers[2])[-1:]
+            vers_words = re.sub('[\W\s]+$', '', vers[2]).lower().split()
+            if vers_words and vers_words[-1] != v_state_words[-1]:
+                # consecutive verses cannot have the same last word
+                if v_state[1] == False: # we need to complete the couplet
+                    if check_rhyme(vers[3],v_state[2]) and check_gender(v_state[0],ts):
+                        got_verse = True
+                        v_state[2] = vers[3]
+                        v_state[3] = vers[2]
                 else: # start a new couplet
-                    if (rime[0] == True and vers[2][-1:] == u'e') or vers[2][-1:] != u'e':
-                        thisVerse = vers[2]
-                        rime[2] = vers[3]
-                        delete_row_csr(vectorized_corpus, index)
-                        break
-        if thisVerse:
-            rime[3] = thisVerse
-        else:
-            print('[Can\'t find a replacement verse!]')
-            index = random.randint(0,len(corpus))
-            rime = []
-            continue
+                    if check_gender(v_state[0],ts):
+                        got_verse = True
+                        v_state[2] = vers[3]
+                        v_state[3] = vers[2]
+    if got_verse == False:
+        print('[Can\'t find a replacement verse!]')
+        index = random.randint(0,len(corpus))
+        v_state = []
+    else:
+        # print the verse
+        line = line + 1
+        if line % 100 == 0:
+            eprint('Selected ' + str(line) + ' verses.')
+        words = re.sub('[^\w\s]+', '', sv[2])
+        total_words = total_words + len(words.split())
+#        print(str(line) + ' ' + sv[2].encode('utf8') + '  (' + sv[0] + ':' + str(sv[1]) + ')')
+        print(str(line) + ' ' + vers[2].encode('utf8') + '  (' + vers[0] + ':' + str(vers[1]) + ')')
+#        print(v_state)
+#        print()
 
-        rime[1] = not rime[1] # alternate between 1st and 2nd verse of couplet
-        if rime[1] == True: # next verse is first verse of couplet
-            rime[0] = not rime[0] # next rhyme needs to switch gender
+        # for the next verse
+        if v_state[1] == False: # next verse is first verse of couplet
+            v_state[0] = not v_state[0] # next rhyme needs to switch gender
+        v_state[1] = not v_state[1] # alternate between 1st and 2nd verse of couplet
